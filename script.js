@@ -31,6 +31,7 @@ function createURL(tags,pid)
   const color = ["red","blue","green","orange","yellow","olive","magenta","gray","pink","purple","brown","gold","khaki","lavender","navy","lightgreen"]
   let i = 0;
   global_trans = ""
+  document.body.appendChild(document.createElement("br"));
   for (const [key, value] of Object.entries(att)) {
     var confidence = [];
     var x = [], y = [];
@@ -52,7 +53,7 @@ function createURL(tags,pid)
       addborder[n] = "o_0,fl_layer_apply,bo_5px_solid_" + color[i] + "/";
       raw_transformation = raw_transformation + addtext[n] + addtextloc[n] + addimg[n] + dimention[n] + addborder[n]
       if(model == "cld-fashion" && value[n]['attributes']) {
-        document.body.appendChild(document.createTextNode(key));
+        document.body.appendChild(document.createTextNode("Attributes of " + key + ":"));
         document.body.appendChild(renderjson(value[n]['attributes']));
       }
     }
