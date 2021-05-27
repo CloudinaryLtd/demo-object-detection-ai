@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>object detection</title>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_192x192.png' rel='apple-touch-icon' sizes='180x180'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_192x192.png' rel='icon' sizes='192x192' type='image/png'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_apple-touch-icon-152x152.png' rel='icon' sizes='160x160' type='image/png'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_96x96.png' rel='icon' sizes='96x96' type='image/png'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_16x16.png' rel='icon' sizes='16x16' type='image/png'>
+    <link href='https://cloudinary-res.cloudinary.com/image/upload/docsite/brand-assets/cloudinary_favicon_32x32.png' rel='icon' sizes='32x32' type='image/png'>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="logo-area">
+        <div class="logo-area-elm">
+            <a href="https://cloudinary.com" target="_blank"><img src="https://res.cloudinary.com/cloudinary/image/upload/fl_attachment/v1/logo/for_white_bg/cloudinary_logo_for_white_bg.svg" height="36" width="169" alt="cloudinary"></a>
+        </div>
+        <div class="logo-area-elm">
+            <a href="https://cloudinary.com/signup?source=demo" target="_blank" class="btn signup">Sign up for free</a>
+        </div>
+    </div>
+    <div class="upload-area">
+      <div class="upload">
+        <button id="upload_widget" class="cloudinary-button">Upload files</button> 
+      </div>
+      <div class="model">
+        <br>
+        <label class="container">Cloudinary's fashion model (cld-fashion)
+          <input type="radio" checked="checked" name="radio" id="cld-fashion" value="cld-fashion">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Cloudinary's human anatomy model (human-anatomy)
+          <input type="radio" name="radio" id="human-anatomy" value="human-anatomy">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Common Objects in Context (coco)
+          <input type="radio"  name="radio" id="coco" value="coco">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Large Vocabulary Instance Segmentation (lvis)
+          <input type="radio" name="radio" id="lvis" value="lvis">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Google's Open Images Dataset (openimages)
+          <input type="radio" name="radio" id="openimages" value="openimages">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.min.js" ></script>
+    <script type="text/javascript" src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
