@@ -51,6 +51,10 @@ function createURL(tags,pid)
       dimention[n] = "/x_"+ Math.round(x[n]) + ",y_" + Math.round(y[n]) + ",g_north_west,"
       addborder[n] = "o_0,fl_layer_apply,bo_5px_solid_" + color[i] + "/";
       raw_transformation = raw_transformation + addtext[n] + addtextloc[n] + addimg[n] + dimention[n] + addborder[n]
+      if(model == "cld-fashion" && value[n]['attributes']) {
+        document.body.appendChild(document.createTextNode(key));
+        document.body.appendChild(renderjson(value[n]['attributes']));
+      }
     }
      i++;
     global_trans = global_trans + "/" + raw_transformation
@@ -58,7 +62,6 @@ function createURL(tags,pid)
 
   console.log(cl.url(pid,{folder:demo_folder, raw_transformation:global_trans}))
   document.body.appendChild(cl.imageTag(pid,{raw_transformation:global_trans}).toDOM());
-
 }
 
 function checkModel() {
