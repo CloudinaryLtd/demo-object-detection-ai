@@ -40,9 +40,9 @@ function createURL(tags,pid)
     var raw_transformation = "";
     for (n = 0; n < value.length; n++)
     {
-      console.log(key,value.length,value[n]['bounding-box'][0])
+      console.log(key,value.length,value[n]['categories'][0],value[n]['bounding-box'][0])
       confidence[n] = (Math.round(value[n]['confidence'] * 100) / 100).toFixed(2);
-      if(model != "unidet" || confidence[n] > 0.7) {
+      if(model != "unidet" || value[n]['categories'][0] == "furniture") {
           x[n] = value[n]['bounding-box'][0]
           y[n] = value[n]['bounding-box'][1]
           width[n] = value[n]['bounding-box'][2]
