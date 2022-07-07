@@ -38,7 +38,7 @@ function createURL(tags,pid)
     var hight = [], width = [];
     var addtext = [], addtextloc = [], addimg = [], dimention = [], addborder = [];
     var raw_transformation = "";
-    for (n = 0; (n < value.length) && (n < color.length); n++)
+    for (n = 0; n < value.length; n++)
     {
       console.log(key,value.length,value[n]['bounding-box'][0])
       confidence[n] = (Math.round(value[n]['confidence'] * 100) / 100).toFixed(2);
