@@ -28,7 +28,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 function createURL(tags,pid)
 {
   const att = tags
-  const color = ["red","blue","green","orange","yellow","olive","magenta","gray","pink","purple","brown","gold","khaki","lavender","navy","lightgreen","lightred","lightblue","lightgray","lightpurple"]
+  const color = ["red","blue","green","orange","yellow","olive","magenta","gray","pink","purple","brown","gold","khaki","lavender","navy","lightgreen"]
   let i = 0;
   global_trans = ""
   document.body.appendChild(document.createElement("br"));
