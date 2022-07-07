@@ -42,7 +42,7 @@ function createURL(tags,pid)
     {
       console.log(key,value.length,value[n]['categories'][0],value[n]['bounding-box'][0])
       confidence[n] = (Math.round(value[n]['confidence'] * 100) / 100).toFixed(2);
-      if(model != "unidet" || value[n]['categories'][0] == "furniture") {
+      if(model != "unidet" || key == "furniture" || (value[n]['categories'].length > 0 && value[n]['categories'][0] == "furniture")) {
           x[n] = value[n]['bounding-box'][0]
           y[n] = value[n]['bounding-box'][1]
           width[n] = value[n]['bounding-box'][2]
