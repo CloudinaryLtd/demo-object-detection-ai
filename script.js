@@ -86,6 +86,10 @@ function checkModel() {
     model = "openimages";
     preset = "openimages";
   }
+   else if(document.getElementById('unidet').checked == true) {
+    model = "unidet";
+    preset = "unidet";
+  }
   else {
     model = "cld-fashion";
     preset = model;
