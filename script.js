@@ -42,16 +42,18 @@ function createURL(tags,pid)
     {
       console.log(key,value.length,value[n]['bounding-box'][0])
       confidence[n] = (Math.round(value[n]['confidence'] * 100) / 100).toFixed(2);
-      x[n] = value[n]['bounding-box'][0]
-      y[n] = value[n]['bounding-box'][1]
-      width[n] = value[n]['bounding-box'][2]
-      hight[n] = value[n]['bounding-box'][3] 
-      addtext[n] = "l_text:arial_20:" + key + " " + confidence[n] + ",co_" + color[i] +",x_" + Math.round(x[n]) + ",y_" + Math.round(y[n]+20) 
-      addtextloc[n] = "/g_north_west,x_" + Math.round(x[n]) + ",y_" + Math.round(y[n]-20) + ",fl_layer_apply"
-      addimg[n] = "/l_sample,w_" + Math.round(width[n]) + ",h_" + Math.round(hight[n])
-      dimention[n] = "/x_"+ Math.round(x[n]) + ",y_" + Math.round(y[n]) + ",g_north_west,"
-      addborder[n] = "o_0,fl_layer_apply,bo_5px_solid_" + color[i] + "/";
-      raw_transformation = raw_transformation + addtext[n] + addtextloc[n] + addimg[n] + dimention[n] + addborder[n]
+      if(model != "unidet" || confidence[n] > 0.7) {
+          x[n] = value[n]['bounding-box'][0]
+          y[n] = value[n]['bounding-box'][1]
+          width[n] = value[n]['bounding-box'][2]
+          hight[n] = value[n]['bounding-box'][3] 
+          addtext[n] = "l_text:arial_20:" + key + " " + confidence[n] + ",co_" + color[i] +",x_" + Math.round(x[n]) + ",y_" + Math.round(y[n]+20) 
+          addtextloc[n] = "/g_north_west,x_" + Math.round(x[n]) + ",y_" + Math.round(y[n]-20) + ",fl_layer_apply"
+          addimg[n] = "/l_sample,w_" + Math.round(width[n]) + ",h_" + Math.round(hight[n])
+          dimention[n] = "/x_"+ Math.round(x[n]) + ",y_" + Math.round(y[n]) + ",g_north_west,"
+          addborder[n] = "o_0,fl_layer_apply,bo_5px_solid_" + color[i] + "/";
+          raw_transformation = raw_transformation + addtext[n] + addtextloc[n] + addimg[n] + dimention[n] + addborder[n]
+      }
       if(model == "cld-fashion" && value[n]['attributes']) {
         document.body.appendChild(document.createTextNode("Attributes of " + key + ":"));
         document.body.appendChild(renderjson(value[n]['attributes']));
