@@ -57,8 +57,10 @@ function createURL(tags,pid)
         document.body.appendChild(renderjson(value[n]['attributes']));
       }
     }
-     i++;
-    global_trans = global_trans + "/" + raw_transformation
+    if (i < color.length) {
+     global_trans = global_trans + "/" + raw_transformation
+    }
+    i++;
   }
 
   console.log(cl.url(pid,{folder:demo_folder, raw_transformation:global_trans}))
